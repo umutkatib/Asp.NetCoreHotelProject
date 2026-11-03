@@ -1,14 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using HotelProject.BusinessLayer.Abstract;
+using HotelProject.BusinessLayer.Concrete;
+using HotelProject.DataAccessLayer.Abstract;
+using HotelProject.DataAccessLayer.Concrete;
+using HotelProject.DataAccessLayer.EntityFramework;
+using HotelProject.WebApi.Mapping;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace HotelProject.WebApi
@@ -25,8 +25,22 @@ namespace HotelProject.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<HotelProjectContext>();
 
-            services.AddControllers();
+			services.AddAutoMapper(cfg => cfg.AddMaps(typeof(Program).Assembly)); 
+            services.AddScoped<IServiceDal, EfServiceDal>();
+            services.AddScoped<ISubscribeDal, EfSubscribeDal>();
+            services.AddScoped<IStaffDal, EfStaffDal>();
+            services.AddScoped<ITestimonialDal, EfTestimonialDal>();
+            services.AddScoped<IRoomDal, EfRoomDal>();
+
+			services.AddScoped<IServiceService, ServiceManager>();
+			services.AddScoped<ISubscribeService, SubscribeManager>();
+			services.AddScoped<IStaffService, StaffManager>();      
+			services.AddScoped<ITestimonialService, TestimonialManager>();
+			services.AddScoped<IRoomService, RoomManager>();
+
+			services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HotelProject.WebApi", Version = "v1" });
