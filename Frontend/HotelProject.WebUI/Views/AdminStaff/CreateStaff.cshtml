@@ -1,0 +1,87 @@
+﻿@model CreateStaffDto
+
+@{
+    ViewData["Title"] = "Yeni Personel Ekle";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid mt-3">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="mb-0">Yeni Personel Ekle</h4>
+                        <a href="/Staff/Index" class="btn btn-light btn-sm rounded">
+                            <i class="fa fa-arrow-left mr-1"></i> Listeye Dön
+                        </a>
+                    </div>
+
+                    <form asp-controller="AdminStaff" asp-action="CreateStaff" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label asp-for="StaffName">Ad Soyad</label>
+                                <input asp-for="StaffName" class="form-control" />
+                                <span asp-validation-for="StaffName" class="text-danger small"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label asp-for="StaffTitle">Unvan</label>
+                                <input asp-for="StaffTitle" class="form-control" />
+                                <span asp-validation-for="StaffTitle" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+                        <h6 class="text-muted mb-3">Sosyal Medya Bağlantıları</h6>
+
+                        <div class="form-group">
+                            <label asp-for="StaffSocialMediaForF">Facebook</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-facebook text-primary"></i></span>
+                                </div>
+                                <input asp-for="StaffSocialMediaForF" class="form-control" />
+                            </div>
+                            <span asp-validation-for="StaffSocialMediaForF" class="text-danger small"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="StaffSocialMediaForT">Twitter / X</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-twitter text-info"></i></span>
+                                </div>
+                                <input asp-for="StaffSocialMediaForT" class="form-control" />
+                            </div>
+                            <span asp-validation-for="StaffSocialMediaForT" class="text-danger small"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="StaffSocialMediaForI">Instagram</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-instagram text-danger"></i></span>
+                                </div>
+                                <input asp-for="StaffSocialMediaForI" class="form-control" />
+                            </div>
+                            <span asp-validation-for="StaffSocialMediaForI" class="text-danger small"></span>
+                        </div>
+
+                        <div class="text-right mt-4">
+                            <a href="/AdminStaff/Index" class="btn btn-light mr-2">Vazgeç</a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-save mr-1"></i> Kaydet
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

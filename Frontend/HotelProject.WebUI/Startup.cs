@@ -22,6 +22,8 @@ namespace HotelProject.WebUI
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddHttpClient();
+
 			services.AddControllersWithViews();
 		}
 
@@ -46,7 +48,7 @@ namespace HotelProject.WebUI
 			{
 				endpoints.MapControllerRoute(
 					name: "default",
-					pattern: "{controller=Admin}/{action=Index}/{id?}");
+					pattern: "{controller=AdminStaff}/{action=Index}/{id?}");
 			});
 		}
 	}
