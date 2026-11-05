@@ -1,0 +1,53 @@
+﻿@model UpdateTestimonialDto
+
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Referans Güncelle</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Referans Düzenleme Formu</div>
+                        </div>
+                        <div class="card-body">
+
+                            <!-- ID gizli alan olarak tutulur -->
+                            <input type="hidden" asp-for="TestimonialID" />
+
+                            <div class="form-group">
+                                <label for="TestimonialName">Ad Soyad</label>
+                                <input type="text" asp-for="TestimonialName" class="form-control" id="TestimonialName">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="TestimonialTitle">Unvan / Pozisyon</label>
+                                <input type="text" asp-for="TestimonialTitle" class="form-control" id="TestimonialTitle">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="TestimonialImage">Görsel URL</label>
+                                <input type="text" asp-for="TestimonialImage" class="form-control" id="TestimonialImage">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="TestimonialDescription">Açıklama / Yorum</label>
+                                <textarea asp-for="TestimonialDescription" class="form-control" rows="4" id="TestimonialDescription"></textarea>
+                            </div>
+
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-success"><i class="fa fa-sync"></i> Güncelle</button>
+                            <a href="/AdminTestimonial/Index/" class="btn btn-secondary">İptal</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
