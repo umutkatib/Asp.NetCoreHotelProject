@@ -1,0 +1,47 @@
+﻿@model UpdateServiceDto
+
+@{
+    ViewData["Title"] = "UpdateService";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Hizmet Güncelle</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Hizmet Bilgilerini Düzenle</div>
+                        </div>
+                        <div class="card-body">
+
+                            <input type="hidden" asp-for="ServiceID" />
+
+                            <div class="form-group">
+                                <label for="ServiceTitle">Hizmet Başlığı</label>
+                                <input type="text" asp-for="ServiceTitle" class="form-control" id="ServiceTitle">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ServiceIcon">Hizmet İkonu</label>
+                                <input type="text" asp-for="ServiceIcon" class="form-control" id="ServiceIcon">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ServiceDescription">Açıklama</label>
+                                <textarea asp-for="ServiceDescription" class="form-control" rows="4" id="ServiceDescription"></textarea>
+                            </div>
+
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-success"><i class="fa fa-sync"></i> Güncelle</button>
+                            <a href="/AdminService/Index/" class="btn btn-secondary">İptal</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
