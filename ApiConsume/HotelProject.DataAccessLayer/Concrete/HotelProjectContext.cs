@@ -1,9 +1,10 @@
 ﻿using HotelProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelProject.DataAccessLayer.Concrete
 {
-	public class HotelProjectContext : DbContext
+	public class HotelProjectContext : IdentityDbContext<AppUser, AppRole, int>
 	{
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
