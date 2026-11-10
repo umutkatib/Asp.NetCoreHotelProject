@@ -4,12 +4,11 @@ Developed with ASP.NET Core 5.0, has N Tier Architecture that a hotel management
 
 ## 🚀 Technologies in Project
 
-| Konu | Açıklama |
 |------|----------|
 | **ASP.NET Core 5.0** |
 | **ASP.NET Core API** |
 | **ASP.NET Core MVC** |
-| **Entity Framework Core** | (Code First) |
+| **Entity Framework Core(Code First)** |
 | **ASP.NET Identity** |
 | **JSON Web Token (JWT)** |
 | **Login / Register** |
@@ -19,6 +18,6 @@ Developed with ASP.NET Core 5.0, has N Tier Architecture that a hotel management
 | **Repository Design Pattern** |
 | **Swagger** |
 | **API Consume** |
-| **Rapid API** | Harici API entegrasyonu |
+| **Rapid API** |
 | **Mail Gönderme İşlemleri** |
 | **Deploy** |
