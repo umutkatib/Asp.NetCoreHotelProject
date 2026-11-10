@@ -33,12 +33,14 @@ namespace HotelProject.WebApi
             services.AddScoped<IStaffDal, EfStaffDal>();
             services.AddScoped<ITestimonialDal, EfTestimonialDal>();
             services.AddScoped<IRoomDal, EfRoomDal>();
+            services.AddScoped<IAboutDal, EfAboutDal>();
 
 			services.AddScoped<IServiceService, ServiceManager>();
 			services.AddScoped<ISubscribeService, SubscribeManager>();
 			services.AddScoped<IStaffService, StaffManager>();      
 			services.AddScoped<ITestimonialService, TestimonialManager>();
 			services.AddScoped<IRoomService, RoomManager>();
+			services.AddScoped<IAboutService, AboutManager>();
 
             services.AddCors(opt =>
             {
