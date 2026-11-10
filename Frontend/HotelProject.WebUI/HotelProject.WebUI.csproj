@@ -24,8 +24,4 @@
     <ProjectReference Include="..\..\ApiConsume\HotelProject.WebApi\HotelProject.WebApi.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewComponents\" />
-  </ItemGroup>
-
 </Project>
