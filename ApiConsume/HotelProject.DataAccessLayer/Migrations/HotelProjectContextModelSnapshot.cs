@@ -277,6 +277,30 @@ namespace HotelProject.DataAccessLayer.Migrations
                     b.ToTable("Testimonials");
                 });
 
+            modelBuilder.Entity("HotelProject.EntityLayer.Concrete.Trailer", b =>
+                {
+                    b.Property<int>("TrailerID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("TrailerDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TrailerSubTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TrailerTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TrailerVideoFrame")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TrailerID");
+
+                    b.ToTable("Trailers");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.Property<int>("Id")

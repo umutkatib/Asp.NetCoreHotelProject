@@ -5,6 +5,7 @@ using HotelProject.DtoLayer.ServiceDtos;
 using HotelProject.DtoLayer.StaffDtos;
 using HotelProject.DtoLayer.SubscribeDtos;
 using HotelProject.DtoLayer.TestimonialDto;
+using HotelProject.DtoLayer.TrailerDtos;
 using HotelProject.EntityLayer.Concrete;
 
 namespace HotelProject.WebApi.Mapping
@@ -52,6 +53,13 @@ namespace HotelProject.WebApi.Mapping
 			CreateMap<About, CreateAboutDto>().ReverseMap();
 			CreateMap<About, UpdateAboutDto>().ReverseMap();
 			CreateMap<About, GetAboutDto>().ReverseMap();
+
+			//
+
+			CreateMap<Trailer, ResultTrailerDto>().ReverseMap();
+			CreateMap<Trailer, CreateTrailerDto>().ReverseMap();
+			CreateMap<Trailer, UpdateTrailerDto>().ReverseMap();
+			CreateMap<Trailer, GetTrailerDto>().ReverseMap();
 		}
 	}
 }
