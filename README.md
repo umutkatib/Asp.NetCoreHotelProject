@@ -4,7 +4,8 @@ Developed with ASP.NET Core 5.0, has N Tier Architecture that a hotel management
 
 ## 🚀 Technologies in Project
 
-|------|----------|
+| Subject |
+|------|
 | **ASP.NET Core 5.0** |
 | **ASP.NET Core API** |
 | **ASP.NET Core MVC** |
