@@ -1,23 +1,25 @@
 ﻿@model List<ResultServiceDto>
 
-<div class="col-12">
-    <div class="row g-4">
-        @for (int i = 0; i < Model.Count; i++)
-        {
-            var item = Model[i];
-            var delay = (0.1 + (i % 6) * 0.1).ToString("0.0", System.Globalization.CultureInfo.InvariantCulture);
+<div class="container">
+    <div class="col-12">
+        <div class="row g-4">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                var item = Model[i];
+                var delay = (0.1 + (i % 6) * 0.1).ToString("0.0", System.Globalization.CultureInfo.InvariantCulture);
 
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="@(delay)s">
-                <a class="service-item rounded" href="">
-                    <div class="service-icon bg-transparent border rounded p-1">
-                        <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                            <i class="@item.ServiceIcon fa-2x text-primary"></i>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="@(delay)s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="@item.ServiceIcon fa-2x text-primary"></i>
+                            </div>
                         </div>
-                    </div>
-                    <h5 class="mb-3">@item.ServiceTitle</h5>
-                    <p class="text-body mb-0">@item.ServiceDescription</p>
-                </a>
-            </div>
-        }
+                        <h5 class="mb-3">@item.ServiceTitle</h5>
+                        <p class="text-body mb-0">@item.ServiceDescription</p>
+                    </a>
+                </div>
+            }
+        </div>
     </div>
 </div>

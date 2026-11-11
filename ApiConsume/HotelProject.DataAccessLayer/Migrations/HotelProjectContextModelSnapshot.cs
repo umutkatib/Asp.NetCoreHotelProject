@@ -218,6 +218,9 @@ namespace HotelProject.DataAccessLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("StaffImage")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("StaffName")
                         .HasColumnType("nvarchar(max)");
 

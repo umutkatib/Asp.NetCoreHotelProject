@@ -41,7 +41,8 @@
         @await Component.InvokeAsync("_TeamPartialComponent")
 
 
-        @await Component.InvokeAsync("_SubscribePartialComponent")
+        @* @await Component.InvokeAsync("_SubscribePartialComponent") *@
+        @await Html.PartialAsync("_SubscribePartialComponent")
 
 
         @await Component.InvokeAsync("_FooterPartialComponent")

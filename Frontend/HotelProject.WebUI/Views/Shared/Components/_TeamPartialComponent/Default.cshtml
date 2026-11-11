@@ -1,74 +1,31 @@
-﻿<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title text-center text-primary text-uppercase">Ekibimiz</h6>
-            <h1 class="mb-5"><span class="text-primary text-uppercase">Personelimizle</span> Tanışın</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+﻿@model List<ResultStaffDto>
+
+<div class="container">
+    <div class="row g-4">
+        @{
+            int sayac = 0;
+        }
+        @foreach (var item in Model)
+        {
+            var delay = (0.1 + (sayac % 4) * 0.2).ToString("0.0", System.Globalization.CultureInfo.InvariantCulture);
+            sayac++;
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="@(delay)s">
                 <div class="rounded shadow overflow-hidden">
                     <div class="position-relative">
-                        <img class="img-fluid" src="~/hotel-html-template/img/team-1.jpg" alt="">
+                        <img class="img-fluid" src="@item.StaffImage" alt="@item.StaffName">
                         <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-primary mx-1" href="@item.StaffSocialMediaForF"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-primary mx-1" href="@item.StaffSocialMediaForT"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-primary mx-1" href="@item.StaffSocialMediaForI"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                     <div class="text-center p-4 mt-3">
-                        <h5 class="fw-bold mb-0">Ad Soyad</h5>
-                        <small>Görev</small>
+                        <h5 class="fw-bold mb-0">@item.StaffName</h5>
+                        <small>@item.StaffTitle</small>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="rounded shadow overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="~/hotel-html-template/img/team-2.jpg" alt="">
-                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 mt-3">
-                        <h5 class="fw-bold mb-0">Ad Soyad</h5>
-                        <small>Görev</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="rounded shadow overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="~/hotel-html-template/img/team-3.jpg" alt="">
-                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 mt-3">
-                        <h5 class="fw-bold mb-0">Ad Soyad</h5>
-                        <small>Görev</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="rounded shadow overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="~/hotel-html-template/img/team-4.jpg" alt="">
-                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 mt-3">
-                        <h5 class="fw-bold mb-0">Ad Soyad</h5>
-                        <small>Görev</small>
-                    </div>
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </div>
