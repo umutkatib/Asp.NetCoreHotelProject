@@ -154,6 +154,51 @@ namespace HotelProject.DataAccessLayer.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("HotelProject.EntityLayer.Concrete.Booking", b =>
+                {
+                    b.Property<int>("BookingID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BookingAdultCount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("BookingCheckin")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("BookingCheckout")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("BookingChildCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BookingMail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BookingName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("BookingRoomCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BookingSpecialDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BookingSpecialRequest")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("BookingStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("BookingSurname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BookingID");
+
+                    b.ToTable("Bookings");
+                });
+
             modelBuilder.Entity("HotelProject.EntityLayer.Concrete.Contact", b =>
                 {
                     b.Property<int>("ContactID")

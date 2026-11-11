@@ -2,7 +2,6 @@
 using HotelProject.BusinessLayer.Abstract;
 using HotelProject.DtoLayer.ContactDtos;
 using HotelProject.EntityLayer.Concrete;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
