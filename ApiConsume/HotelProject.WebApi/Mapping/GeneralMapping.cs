@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using HotelProject.DtoLayer.AboutDtos;
+using HotelProject.DtoLayer.ContactDtos;
 using HotelProject.DtoLayer.RoomDtos;
 using HotelProject.DtoLayer.ServiceDtos;
+using HotelProject.DtoLayer.SocialMediaDtos;
 using HotelProject.DtoLayer.StaffDtos;
 using HotelProject.DtoLayer.SubscribeDtos;
 using HotelProject.DtoLayer.TestimonialDto;
@@ -60,6 +62,20 @@ namespace HotelProject.WebApi.Mapping
 			CreateMap<Trailer, CreateTrailerDto>().ReverseMap();
 			CreateMap<Trailer, UpdateTrailerDto>().ReverseMap();
 			CreateMap<Trailer, GetTrailerDto>().ReverseMap();
+
+			//
+
+			CreateMap<Contact, ResultContactDto>().ReverseMap();
+			CreateMap<Contact, CreateContactDto>().ReverseMap();
+			CreateMap<Contact, UpdateContactDto>().ReverseMap();
+			CreateMap<Contact, GetContactDto>().ReverseMap();
+
+			//
+
+			CreateMap<SocialMedia, ResultSocialMediaDto>().ReverseMap();
+			CreateMap<SocialMedia, CreateSocialMediaDto>().ReverseMap();
+			CreateMap<SocialMedia, UpdateSocialMediaDto>().ReverseMap();
+			CreateMap<SocialMedia, GetSocialMediaDto>().ReverseMap();
 		}
 	}
 }

@@ -1,0 +1,8 @@
+﻿@model List<ResultSocialMediaDto>
+
+<div class="d-flex pt-2">
+    @foreach(var item in Model)
+    {
+        <a class="btn btn-outline-light btn-social" href="@item.SocialMediaLink" target="_blank" rel="noopener noreferrer"><i class="@item.SocialMediaIcon"></i></a>
+    }
+</div>

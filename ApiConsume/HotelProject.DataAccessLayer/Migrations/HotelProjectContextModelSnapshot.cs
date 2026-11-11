@@ -154,6 +154,36 @@ namespace HotelProject.DataAccessLayer.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("HotelProject.EntityLayer.Concrete.Contact", b =>
+                {
+                    b.Property<int>("ContactID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ContactAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactCity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactCountry")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactDistrict")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactMail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ContactID");
+
+                    b.ToTable("Contacts");
+                });
+
             modelBuilder.Entity("HotelProject.EntityLayer.Concrete.Room", b =>
                 {
                     b.Property<int>("RoomID")
@@ -209,6 +239,27 @@ namespace HotelProject.DataAccessLayer.Migrations
                     b.HasKey("ServiceID");
 
                     b.ToTable("Services");
+                });
+
+            modelBuilder.Entity("HotelProject.EntityLayer.Concrete.SocialMedia", b =>
+                {
+                    b.Property<int>("SocialMediaID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("SocialMediaIcon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SocialMediaLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SocialMediaTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SocialMediaID");
+
+                    b.ToTable("SocialMedias");
                 });
 
             modelBuilder.Entity("HotelProject.EntityLayer.Concrete.Staff", b =>
