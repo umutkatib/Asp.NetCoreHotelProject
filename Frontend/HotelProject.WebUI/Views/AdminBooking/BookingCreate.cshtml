@@ -1,0 +1,96 @@
+﻿@model CreateBookingDto
+
+@{
+    ViewData["Title"] = "CreateBooking";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row page-titles mx-0">
+    <div class="col-sm-6 p-md-0">
+        <div class="breadcrumb-text">
+            <h4>Yeni Rezervasyon Oluştur</h4>
+        </div>
+    </div>
+    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/Booking/Index">Rezervasyonlar</a></li>
+            <li class="breadcrumb-item active"><a href="javascript:void(0)">Ekle</a></li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Rezervasyon Bilgileri</h4>
+                <form action="/Booking/Create" method="post">
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Ad</label>
+                            <input type="text" class="form-control" name="BookingName" placeholder="Müşteri adı...">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Soyad</label>
+                            <input type="text" class="form-control" name="BookingSurname" placeholder="Müşteri soyadı...">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>E-Mail Adresi</label>
+                            <input type="email" class="form-control" name="BookingMail" placeholder="ornek@domain.com">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Giriş Tarihi (Check-in)</label>
+                            <input type="date" class="form-control" name="BookingCheckin">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Çıkış Tarihi (Check-out)</label>
+                            <input type="date" class="form-control" name="BookingCheckout">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>Yetişkin Sayısı</label>
+                            <input type="number" class="form-control" name="BookingAdultCount" value="1" min="1">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Çocuk Sayısı</label>
+                            <input type="number" class="form-control" name="BookingChildCount" value="0" min="0">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Oda Sayısı</label>
+                            <input type="number" class="form-control" name="BookingRoomCount" value="1" min="1">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Özel İstek</label>
+                            <input type="text" class="form-control" name="BookingSpecialRequest" placeholder="Örn: Deniz Manzaralı Oda">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Açıklama(Sadece İşletme Tarafında Görülebilir)</label>
+                            <input type="text" class="form-control" name="BookingSpecialDescription" placeholder="Açıklama...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="BookingStatus" id="BookingStatus" value="true" checked>
+                            <label class="form-check-label" for="BookingStatus">
+                                Rezervasyon Aktif / Onaylı
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark btn-rounded">Kaydet</button>
+                    <a href="/AdminBooking/Index" class="btn btn-light btn-rounded ml-2">İptal</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

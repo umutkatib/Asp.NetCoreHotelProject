@@ -11,33 +11,33 @@ namespace HotelProject.WebApi.Controllers
 	[ApiController]
 	public class BookingsController : ControllerBase
 	{
-		private readonly IBookingService _BookingService;
+		private readonly IBookingService _bookingService;
 		private readonly IMapper _mapper;
 
 		public BookingsController(IBookingService BookingService, IMapper mapper)
 		{
-			_BookingService = BookingService;
+			_bookingService = BookingService;
 			_mapper = mapper;
 		}
 
 		[HttpGet]
 		public IActionResult BookingList()
 		{
-			return Ok(_mapper.Map<List<ResultBookingDto>>(_BookingService.TGetListAll()));
+			return Ok(_mapper.Map<List<ResultBookingDto>>(_bookingService.TGetListAll()));
 		}
 
 		[HttpPost]
 		public IActionResult BookingAdd(CreateBookingDto createBookingDto)
 		{
 			var value = _mapper.Map<Booking>(createBookingDto);
-			_BookingService.TInsert(value);
+			_bookingService.TInsert(value);
 			return Ok();
 		}
 
 		[HttpDelete("{id}")]
 		public IActionResult BookingDelete(int id)
 		{
-			_BookingService.TDelete(_BookingService.TGetByID(id));
+			_bookingService.TDelete(_bookingService.TGetByID(id));
 			return Ok();
 		}
 
@@ -45,15 +45,22 @@ namespace HotelProject.WebApi.Controllers
 		public IActionResult BookingUpdate(UpdateBookingDto updateBookingDto)
 		{
 			var value = _mapper.Map<Booking>(updateBookingDto);
-			_BookingService.TUpdate(value);
+			_bookingService.TUpdate(value);
 			return Ok();
 		}
 
 		[HttpGet("{id}")]
 		public IActionResult BookingGet(int id)
 		{
-			var value = _BookingService.TGetByID(id);
+			var value = _bookingService.TGetByID(id);
 			return Ok(_mapper.Map<GetBookingDto>(value));
+		}
+
+		[HttpGet("BookingStatusChange/{id}")]
+		public IActionResult BookingStatusChange(int id)
+		{
+			_bookingService.TBookingStatusChange(id);
+			return Ok();
 		}
 	}
 }
