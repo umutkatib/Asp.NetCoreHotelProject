@@ -23,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RapidApi", "RapidApi", "{4B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidApiConsume", "RapidApi\RapidApiConsume\RapidApiConsume.csproj", "{7B7E4946-5B1B-45F5-AF85-77B4D3E5B4D5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JwtProject", "JwtProject", "{9523A454-07F8-4EF1-9129-4DC0B5466117}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiJwt", "JwtProject\WebApiJwt\WebApiJwt.csproj", "{D7269031-AFD1-470B-9B39-333215E0476F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,10 @@ Global
 		{7B7E4946-5B1B-45F5-AF85-77B4D3E5B4D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B7E4946-5B1B-45F5-AF85-77B4D3E5B4D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B7E4946-5B1B-45F5-AF85-77B4D3E5B4D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7269031-AFD1-470B-9B39-333215E0476F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7269031-AFD1-470B-9B39-333215E0476F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7269031-AFD1-470B-9B39-333215E0476F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7269031-AFD1-470B-9B39-333215E0476F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +77,7 @@ Global
 		{1336214E-BFC2-4CDB-AC58-53FFA1ACC928} = {E486D8B0-2838-4803-844B-5964E1F8278E}
 		{3780135F-9D4E-4AD3-9562-021936852B18} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{7B7E4946-5B1B-45F5-AF85-77B4D3E5B4D5} = {4B6CD75F-E1AF-4DDA-99F3-A9FFB2066601}
+		{D7269031-AFD1-470B-9B39-333215E0476F} = {9523A454-07F8-4EF1-9129-4DC0B5466117}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {139745FE-7E3F-48D6-89A0-FA660A408F7B}
