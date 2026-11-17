@@ -14,6 +14,11 @@ namespace HotelProject.BusinessLayer.Concrete
 			_roomDal = roomDal;
 		}
 
+		public List<Room> RoomListForDefault()
+		{
+			return _roomDal.RoomListForDefault();
+		}
+
 		public void TDelete(Room entity)
 		{
 			_roomDal.Delete(entity);

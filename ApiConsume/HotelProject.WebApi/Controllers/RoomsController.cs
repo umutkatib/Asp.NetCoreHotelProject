@@ -55,5 +55,11 @@ namespace HotelProject.WebApi.Controllers
 			var value = _roomService.TGetByID(id);
 			return Ok(_mapper.Map<GetRoomDto>(value));
 		}
+
+		[HttpGet("RoomListForDefault")]
+		public IActionResult RoomListForDefault()
+		{
+			return Ok(_roomService.RoomListForDefault());
+		}
 	}
 }
