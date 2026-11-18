@@ -4,6 +4,7 @@ using HotelProject.DtoLayer.AboutDtos;
 using HotelProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace HotelProject.WebApi.Controllers
 {
@@ -11,33 +12,38 @@ namespace HotelProject.WebApi.Controllers
 	[ApiController]
 	public class AboutsController : ControllerBase
 	{
-		private readonly IAboutService _AboutService;
+		private readonly IAboutService _aboutService;
 		private readonly IMapper _mapper;
 
 		public AboutsController(IAboutService AboutService, IMapper mapper)
 		{
-			_AboutService = AboutService;
+			_aboutService = AboutService;
 			_mapper = mapper;
 		}
 
 		[HttpGet]
 		public IActionResult AboutList()
 		{
-			return Ok(_mapper.Map<List<ResultAboutDto>>(_AboutService.TGetListAll()));
+			return Ok(_mapper.Map<List<ResultAboutDto>>(_aboutService.TGetListAll()));
 		}
 
 		[HttpPost]
 		public IActionResult AboutAdd(CreateAboutDto createAboutDto)
 		{
+			var existingAbouts = _aboutService.TGetListAll();
+			if(existingAbouts != null && existingAbouts.Any())
+			{
+				return BadRequest("Sistemde zaten 1 adet Hakkımızda kaydı bulunmaktadır. Yeni kayıt eklenemez.");
+			}
 			var value = _mapper.Map<About>(createAboutDto);
-			_AboutService.TInsert(value);
+			_aboutService.TInsert(value);
 			return Ok();
 		}
 
 		[HttpDelete("{id}")]
 		public IActionResult AboutDelete(int id)
 		{
-			_AboutService.TDelete(_AboutService.TGetByID(id));
+			_aboutService.TDelete(_aboutService.TGetByID(id));
 			return Ok();
 		}
 
@@ -45,14 +51,14 @@ namespace HotelProject.WebApi.Controllers
 		public IActionResult AboutUpdate(UpdateAboutDto updateAboutDto)
 		{
 			var value = _mapper.Map<About>(updateAboutDto);
-			_AboutService.TUpdate(value);
+			_aboutService.TUpdate(value);
 			return Ok();
 		}
 
 		[HttpGet("{id}")]
 		public IActionResult AboutGet(int id)
 		{
-			var value = _AboutService.TGetByID(id);
+			var value = _aboutService.TGetByID(id);
 			return Ok(_mapper.Map<GetAboutDto>(value));
 		}
 	}
