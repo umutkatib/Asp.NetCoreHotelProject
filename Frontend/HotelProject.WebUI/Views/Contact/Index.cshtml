@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+    @await Component.InvokeAsync("_HeadPartialComponent")
+
+<body>
+    <div class="container-fluid bg-white p-0">
+
+
+        @await Component.InvokeAsync("_SpinnerPartialComponent")
+
+
+        @await Component.InvokeAsync("_NavbarPartialComponent")
+
+
+        @await Component.InvokeAsync("_MessageCoverPartialComponent")
+
+
+        @await Html.PartialAsync("/Views/Message/SendMessage.cshtml")
+
+
+        @await Component.InvokeAsync("_FooterPartialComponent")
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    </div>
+
+    @await Component.InvokeAsync("_ScriptsPartialComponent")
+
+</body>
+
+</html>

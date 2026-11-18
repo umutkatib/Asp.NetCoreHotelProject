@@ -2,6 +2,7 @@
 using HotelProject.DtoLayer.AboutDtos;
 using HotelProject.DtoLayer.BookingDtos;
 using HotelProject.DtoLayer.ContactDtos;
+using HotelProject.DtoLayer.MessageDtos;
 using HotelProject.DtoLayer.RoomDtos;
 using HotelProject.DtoLayer.ServiceDtos;
 using HotelProject.DtoLayer.SocialMediaDtos;
@@ -84,6 +85,13 @@ namespace HotelProject.WebApi.Mapping
 			CreateMap<Booking, CreateBookingDto>().ReverseMap();
 			CreateMap<Booking, UpdateBookingDto>().ReverseMap();
 			CreateMap<Booking, GetBookingDto>().ReverseMap();
+
+			//
+
+			CreateMap<Message, ResultMessageDto>().ReverseMap();
+			CreateMap<Message, CreateMessageDto>().ReverseMap();
+			CreateMap<Message, UpdateMessageDto>().ReverseMap();
+			CreateMap<Message, GetMessageDto>().ReverseMap();
 		}
 	}
 }

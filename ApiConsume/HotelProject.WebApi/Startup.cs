@@ -38,6 +38,7 @@ namespace HotelProject.WebApi
             services.AddScoped<IContactDal, EfContactDal>();
             services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
             services.AddScoped<IBookingDal, EfBookingDal>();
+            services.AddScoped<IMessageDal, EfMessageDal>();
 
 			services.AddScoped<IServiceService, ServiceManager>();
 			services.AddScoped<ISubscribeService, SubscribeManager>();
@@ -49,6 +50,7 @@ namespace HotelProject.WebApi
 			services.AddScoped<IContactService, ContactManager>();
 			services.AddScoped<ISocialMediaService, SocialMediaManager>();
 			services.AddScoped<IBookingService, BookingManager>();
+			services.AddScoped<IMessageService, MessageManager>();
 
             services.AddCors(opt =>
             {

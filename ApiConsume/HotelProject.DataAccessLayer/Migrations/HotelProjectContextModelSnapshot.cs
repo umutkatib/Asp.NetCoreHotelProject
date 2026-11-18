@@ -253,6 +253,36 @@ namespace HotelProject.DataAccessLayer.Migrations
                     b.ToTable("Guests");
                 });
 
+            modelBuilder.Entity("HotelProject.EntityLayer.Concrete.Message", b =>
+                {
+                    b.Property<int>("MessageID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("MessageDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MessageMail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MessageMessage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MessageName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MessageSubject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MessageSurname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MessageID");
+
+                    b.ToTable("Messages");
+                });
+
             modelBuilder.Entity("HotelProject.EntityLayer.Concrete.Room", b =>
                 {
                     b.Property<int>("RoomID")

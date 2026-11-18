@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelProject.EntityLayer.Concrete
 {
@@ -15,5 +11,7 @@ namespace HotelProject.EntityLayer.Concrete
 		public string ContactCountry { get; set; }
 		public string ContactPhone { get; set; }
 		public string ContactMail { get; set; }
+		//public DateTime ContactDate { get; set; }
+
 	}
 }
